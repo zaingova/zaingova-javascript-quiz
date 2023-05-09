@@ -1,31 +1,55 @@
 * {
-    background-color: rgb(58, 67, 121);
     color: white;
+    background-color: steelblue;
 }
 
-header {
-    text-align: center;
+button {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 3px solid black;
+    font-weight: 900;
+    margin-left: 20px;
 }
 
-.description {
-    padding-bottom: 30px;
+.answers {
+    padding-left: 60px;
 }
 
 .timer {
-    text-align: right;
-    padding-right: 50px;
-    padding-top: 30px;
-    font-size: 30px;
+    position: absolute;
+    top: 0;
+    font-size: 25px;
+    right: 20px;
 }
 
-.start {
-    background-color: black;
+.intro-page {
     font-size: 20px;
-    height: 40px;
-    width: 200px;
 }
 
-.title {
-    padding: 30px;
-    font-size: 60px;
+.main {
+    padding-top: 10vh;
+    text-align: center;
+}
+
+.main h5 {
+    background-color: black;
+    font-size: 50px;
+}
+
+.main p {
+    text-align: left;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.question {
+    /* default hides this, so that it doesn't show up in the introduction */
+    display: none;
+    background-color: rgb(31, 31, 31);
+    font-size: 35px;
+    text-align: left;
+    padding-bottom: 20px;
 }
