@@ -28,24 +28,24 @@ var answers = [
         "answer": "Cascading Style Sheets"
     },
     {
-        "question": "#2. What is 10 + 10?",
-        "options": [5, 3, 7, 20],
-        "answer": 20
+        "question": "#2. What does CSS allow us to do?",
+        "options": ["Style the HTML elements", "Add interactivity to the webpage", "Use various 3rd-party APIs", "Sort items in a list"],
+        "answer": "Style the HTML elements"
     },
     {
-        "question": "#3. What is 10 + 10?",
-        "options": [5, 3, 7, 20],
-        "answer": 20
+        "question": "#3. What does API stand for?",
+        "options": ["Application Programming Interface", "Artificial Part Interaction", "Analogus Prefrontal Interface", "Anti-Propogation ID"],
+        "answer": "Application Programming Interface"
     },
     {
-        "question": "#4. What is 10 + 10?",
-        "options": [5, 3, 7, 20],
-        "answer": 20
+        "question": "#4. What is the DOM?",
+        "options": ["A CSS styling guide", "Javascript tool used for iteration", "Document Object Model", "HTML syntax guidelines"],
+        "answer": "Document Object Model"
     },
     {
-        "question": "#5. sWhat is 10 + 10?",
-        "options": [5, 3, 7, 20],
-        "answer": 20
+        "question": "#5. Which part of the HTML document does the JavaScript tag go into?",
+        "options": ["Top of the head", "Top of the body", "It doesn't go in the HTML document", "Bottom of the body"],
+        "answer": "Bottom of the body"
     }
 ]
 
@@ -62,14 +62,20 @@ function displayIntro() {
     introEl.appendChild(startButton);
 }
 
+// renders the quiz section of the program
 function displayQuiz() {
     startTimer();
     displayQuestion(0);
+    displayQuestion(1);
+    displayQuestion(2);
+    displayQuestion(3);
+    displayQuestion(4);
 }
 
+// renders each indivual set of questions and answers
 function displayQuestion(qindex) {
     // sets the question value
-    quizQuestion.textContent = answers[0].question;
+    quizQuestion.textContent = answers[qindex].question;
 
     // sets the
     a1.textContent = "a) " + answers[qindex].options[0];
@@ -117,6 +123,7 @@ function endQuiz() {
 
 // starts the timer count down
 function startTimer() {
+    timerEl.setAttribute("style", "display: block");
     timerEl.textContent = "Time remaining: " + timeRemaining + " seconds";
     var timer = setInterval(function () {
         timeRemaining--;
