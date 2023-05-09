@@ -72,14 +72,7 @@ function displayQuiz() {
 
     // starts at index 0, and progressively cycles through each question
     displayQuestion(questionNum);
-    questionNum++;
-    displayQuestion(questionNum);
-    questionNum++;
-    displayQuestion(questionNum);
-    questionNum++;
-    displayQuestion(questionNum);
-    questionNum++;
-    displayQuestion(questionNum);
+
 }
 
 // renders each indivual set of questions and answers
@@ -108,18 +101,46 @@ startButton.addEventListener("click", function (){
 // event listeners for each possible answer -- looks for a 'click' event
 a1.addEventListener("click", function(event) {
     parseInput(0);
+    
+    if (questionNum < 4) {
+        questionNum++;
+        displayQuestion(questionNum);
+    } else {
+        endQuiz();
+    }
 });
 
 a2.addEventListener("click", function(event) {
     parseInput(1);
+
+    if (questionNum < 4) {
+        questionNum++;
+        displayQuestion(questionNum);
+    } else {
+        endQuiz();
+    }
 });
 
 a3.addEventListener("click", function(event) {
     parseInput(2);
+    
+    if (questionNum < 4) {
+        questionNum++;
+        displayQuestion(questionNum);
+    } else {
+        endQuiz();
+    }
 });
 
 a4.addEventListener("click", function(event) {
     parseInput(3);
+
+    if (questionNum < 4) {
+        questionNum++;
+        displayQuestion(questionNum);
+    } else {
+        endQuiz();
+    }
 });
 
 // compares the user input to the CORRECT answer in the question object
@@ -128,9 +149,12 @@ function parseInput(index) {
     var stringAnswer = JSON.stringify(event.target.textContent);
     stringAnswer = (stringAnswer.substring(4, stringAnswer.length - 1));
 
+    if ((stringAnswer === answers[questionNum].answer)) {
+        score++;
+    } else {
+        timeRemaining -= 5;
+    }
     console.log(stringAnswer === answers[questionNum].answer);
-       
-    index++;
 }
 
 // initializer function. sets game state, starts timer, etc
@@ -159,7 +183,7 @@ function logScore() {
 
 // ends the quiz and displays highscores
 function endQuiz() {
-
+    mainEl.textContent = "score: " + score;
 }
 
 // starts the timer count down
