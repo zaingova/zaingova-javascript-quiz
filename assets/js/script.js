@@ -113,6 +113,8 @@ replayButton.addEventListener("click", function () {
     introEl.setAttribute("style", "display: block");
     replayButton.setAttribute("style", "display: none");
 
+    userStatsEl.innerHTML = " ";
+
     displayIntro();
 })
 
