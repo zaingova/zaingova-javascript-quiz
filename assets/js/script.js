@@ -18,6 +18,7 @@ var a2 = document.createElement("p");
 var a3 = document.createElement("p");
 var a4 = document.createElement("p");
 
+// adds class names to either button so they can be styled differently
 startButton.className = "start-button";
 replayButton.className = "replay-button";
 
@@ -105,6 +106,7 @@ function displayQuestion(questionNum) {
     quizAnswersEl.appendChild(a4);
 }
 
+// event listener for the replay button at the end of the game
 replayButton.addEventListener("click", function () {
     userStatsEl.setAttribute("style", "display: none");
     mainEl.setAttribute("style", "display: none");
@@ -166,6 +168,7 @@ a4.addEventListener("click", function (event) {
     }
 });
 
+// sets global variable values
 function init() {
     timeRemaining = 60;
     score = 0;
@@ -189,11 +192,7 @@ function parseInput(index) {
     console.log(stringAnswer === answers[questionNum].answer);
 }
 
-// logs score in local storage
-function logScore() {
-
-}
-
+// loops through items in local storage and displays them to the screen
 function displayStats() {
     mainEl.setAttribute("style", "display: none");
     userStatsEl.setAttribute("style", "display: block");
@@ -214,7 +213,6 @@ function displayStats() {
 
 // ends the quiz and displays highscores
 function endQuiz() {
-
     localStorage.setItem(playerData[0], playerData[1]);
     displayStats();
 }
