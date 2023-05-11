@@ -14,7 +14,7 @@ this is a JavaScript quiz, coded using JavaScript APIs. The user picks their ans
 
 simply click on whatever answer you'd like with your mouse. Your score is logged in the top left, and the timer is in the top right. If you get a question wrong, 5 seconds are removed from your timer.
 
-[https://github.com/zaingova/zaingova-javascript-quiz](https://github.com/zaingova/zaingova-javascript-quiz)
+[https://zaingova.github.io/zaingova-javascript-quiz/](https://zaingova.github.io/zaingova-javascript-quiz/)
 
 ## Support
 
